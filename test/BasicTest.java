@@ -4,10 +4,10 @@ import play.test.*;
 import models.*;
 
 public class BasicTest extends UnitTest {
+	@Before
+	public void setup() {
+		Fixtures.deleteDatabase();
+	}
 
-    @Test
-    public void aVeryImportantThingToTest() {
-        assertEquals(2, 1 + 1);
-    }
 
 }
