@@ -2,6 +2,28 @@
 #{set title:'首页' /}
 #{script 'swfobject/swfobject.js'/}
 #{script 'swfobject/initSwf.js'/}
+#{script 'jquery.cycle.js'/}
+#{script 'mosaic.1.0.1.min.js'/}
+
+<script type="text/javascript">
+            $(document).ready(function(){
+    			
+				// FEATURED WORKS HOVER EFFECT
+                $('.cover').mosaic({
+                    animation	:	'slide',	//fade or slide
+                    hover_x		:	'276px'		//Horizontal position on hover
+                });
+                
+				// PARTNERS SLIDESHOW,回到顶部
+                $('#slideshow').cycle({
+                    fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                });
+            });
+</script>
+<link rel="stylesheet" href="/public/stylesheets/home.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/public/stylesheets/mosaic.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/public/stylesheets/colorbox.css" type="text/css" media="screen" />
+
 
 <!-- BEGIN container_12 -->
 <div class="container_12">

@@ -1,20 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Piecemaker>
 	<Contents><!-- begin IMAGES PATH -->
-		<Image Source="/public/images/slider/1.jpg" Title="Image 1"></Image>
-		<Image Source="/public/images/slider/2.jpg" Title="Image 2">
-			<Text>&lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;&lt;p&gt;
-				Consectetur adipiscing elit. Quisque a arcu id neque pretium
-				viverra. Class aptent taciti sociosqu ad litora torquent per conubia
-				nostra, per inceptos himenaeos. Morbi fermentum sollicitudin diam
-				vel vehicula. Sed leo risus, cursus id laoreet vitae, consectetur
-				nec dui. Maecenas pharetra egestas adipiscing. Nullam consequat
-				velit in felis sodales in facilisis justo fringilla. Pellentesque
-				nec lobortis dolor. Praesent et mi eu magna dapibus condimentum.
-			</Text>
+		<Image Source="/public/images/slider/1.jpg" Title="1"></Image>
+		<Image Source="/public/images/slider/2.jpg" Title="2">
 		</Image>
-		<Image Source="/public/images/slider/3.jpg" Title="Image 3"></Image>
-		<Image Source="/public/images/slider/4.jpg" Title="Image 4"></Image>
+		<Image Source="/public/images/slider/3.jpg" Title="3"></Image>
+		<Image Source="/public/images/slider/4.jpg" Title="4"></Image>
 	</Contents><!-- end IMAGES PATH -->
 	<!-- begin SLIDER SETTINGS -->
 	<Settings ImageWidth="940" ImageHeight="330" LoaderColor="0x333333"

@@ -21,4 +21,25 @@ public class Application extends Controller {
 	public static void plan() {
 		render();
 	}
+
+	/**
+	 * 服务模式
+	 */
+	public static void service() {
+		render();
+	}
+
+	/**
+	 * 客户案例
+	 */
+	public static void clients() {
+		render();
+	}
+
+	/**
+	 * 关于我们
+	 */
+	public static void about() {
+		render();
+	}
 }

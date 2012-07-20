@@ -8,15 +8,11 @@
 
 	<!-- Favicon -->
 		<link rel="shortcut icon" href="favicon.ico" />
-		#{get 'moreStyles' /}
 	<!-- Begin Stylesheets -->
 		<link rel="stylesheet" href="/public/stylesheets/reset.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/public/stylesheets/960_12_col.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/public/stylesheets/layout.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/public/stylesheets/home.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/public/stylesheets/colorbox.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/public/stylesheets/ui.totop.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/public/stylesheets/mosaic.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/public/stylesheets/superfish.css" type="text/css" media="screen" />
 	<!-- End Stylesheets -->
     
@@ -32,35 +28,21 @@
         
     <!-- jQuery plugins -->
         <script type="text/javascript" src="/public/javascripts/jquery.ui.totop.js"></script>
-        <script type="text/javascript" src="/public/javascripts/mosaic.1.0.1.min.js"></script>
-        <script type="text/javascript" src="/public/javascripts/jquery.cycle.js"></script>
         <script type="text/javascript" src="/public/javascripts/superfish.js"></script>
         <script type="text/javascript" src="/public/javascripts/hoverIntent.js"></script>
         <script type="text/javascript" src="/public/javascripts/effects.js"></script>
-         #{get 'moreScripts' /}
     <!-- jQuery plugin init -->
-		<script type="text/javascript">
-            $(document).ready(function(){
-    			
-				// SCROLL TO TOP BUTTON
-                $().UItoTop({ easingType: 'easeOutQuart' });
-                
-				// FEATURED WORKS HOVER EFFECT
-                $('.cover').mosaic({
-                    animation	:	'slide',	//fade or slide
-                    hover_x		:	'276px'		//Horizontal position on hover
-                });
-                
-				// PARTNERS SLIDESHOW,回到顶部
-                $('#slideshow').cycle({
-                    fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-                });
-                
-				// SUBMENU
-                $('ul.sf-menu').superfish(); 
-    
-            });
-        </script>
+        <script type="text/javascript">
+		$(document).ready(function(){   
+			
+			// SCROLL TO TOP BUTTON
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+			// SUBMENU
+			$('ul.sf-menu').superfish(); 
+
+		});
+		</script>
 
 	<!-- End JavaScript -->
 	
@@ -90,13 +72,13 @@
                     <a href="/plan">解决方案</a><!-- main item -->
                 </li>
                 <li class="top-item">
-                    <a href="services.html">服务模式</a><!-- main item -->
+                    <a href="/service">服务模式</a><!-- main item -->
                 </li>
                 <li class="top-item">
-                    <a href="partners.html">客户案例</a><!-- main item -->
+                    <a href="/clients">客户案例</a><!-- main item -->
                 </li>	
                 <li class="top-item">
-                    <a href="contact.html">关于我们</a><!-- main item -->
+                    <a href="/about">关于我们</a><!-- main item -->
                 </li>	
             </ul>
         </div><!-- end .grid_9 -->
@@ -123,7 +105,7 @@
         	<img src="/public/images/footer/icon1.jpg" alt="" />
             <p class="footerTitle">地址</p>
             <p class="footerText">
-                山东济南高新开发区齐鲁软件园<br/>
+                山东省济南市高新开发区山东大学齐鲁软件学院<br/>
                 联系电话:0531-88391516 <br/>
                 邮政编码:250101<br/><br/>
             </p>
@@ -154,7 +136,7 @@
         <!-- begin .grid_3  -->
         <div class="grid_3" id="footerBox4">
         	<img src="/public/images/footer/icon4.jpg" alt="" />
-            <p class="footerTitle">社交网络</p>
+            <p class="footerTitle">SNS</p>
             <a href="#"><img class="socialIcon" src="/public/images/social/twitter.jpg" alt=""/></a>
             <a href="#"><img class="socialIcon" src="/public/images/social/skype.jpg" alt="" /></a>
             <a href="#"><img class="socialIcon" src="/public/images/social/linkedin.jpg" alt="" /></a><br />
