@@ -51,7 +51,7 @@
                     hover_x		:	'276px'		//Horizontal position on hover
                 });
                 
-				// PARTNERS SLIDESHOW
+				// PARTNERS SLIDESHOW,回到顶部
                 $('#slideshow').cycle({
                     fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
                 });
@@ -61,29 +61,7 @@
     
             });
         </script>
-        
-    <!-- Piecemaker slider -->
-        <script type="text/javascript" src="/public/javascripts/swfobject/swfobject.js"></script>
-        
-        <script type="text/javascript">
-		  var flashvars = {};
-		  flashvars.cssSource = "/public/piecemaker/piecemaker.css";
-		  flashvars.xmlSource = "/public/piecemaker/piecemaker.xml";
-			
-		  var params = {};
-		  params.play = "true";
-		  params.menu = "false";
-		  params.scale = "showall";
-		  params.wmode = "transparent";
-		  params.allowfullscreen = "true";
-		  params.allowscriptaccess = "always";
-		  params.allownetworking = "all";
-		  
-		  swfobject.embedSWF('/public/piecemaker/piecemaker.swf', 'piecemaker', '940', '375', '10', null, flashvars,    
-		  params, null);
-		
-		</script>
- 
+
 	<!-- End JavaScript -->
 	
 </head>
@@ -109,7 +87,7 @@
                     <a href="/">首页</a><!-- main item -->
                 </li>
                 <li class="top-item">
-                    <a href="plan.html">解决方案</a><!-- main item -->
+                    <a href="/plan">解决方案</a><!-- main item -->
                 </li>
                 <li class="top-item">
                     <a href="services.html">服务模式</a><!-- main item -->
@@ -120,9 +98,6 @@
                 <li class="top-item">
                     <a href="contact.html">关于我们</a><!-- main item -->
                 </li>	
-                <li class="top-item">
-                    <a href="#">登录|注册</a><!-- main item -->
-                </li>	
             </ul>
         </div><!-- end .grid_9 -->
         
@@ -131,7 +106,12 @@
     </div><!-- END HEADER -->
 </div><!-- END container_12 -->
 
+
+
  #{doLayout /}
+
+
+
 
 <!-- BEGIN FOOTER -->
 <div id="footer">
