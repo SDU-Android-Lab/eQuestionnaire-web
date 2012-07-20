@@ -9,8 +9,18 @@ import models.*;
 
 public class Application extends Controller {
 
-    public static void index() {
-        render();
-    }
+	/**
+	 * 首页
+	 */
+	public static void index() {
+		render();
+	}
+
+	/**
+	 * 解决方案
+	 */
+	public static void plan() {
+		render();
+	}
 
 }
