@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#tab { padding: 0; }
+#tab li { display: inline; }
+#tab li a { background: #CCC; padding: 10px; float:left; border-right: 1px solid #EEE; border-bottom: none; text-decoration: none; color: #000; font-weight: normal;}
+#tab li.active a { background: #EEE; }
+.contentTab { float: left; clear: both; border: 1px solid #CCC; border-top: none; border-left: none; background: #EEE; padding: 20px;}

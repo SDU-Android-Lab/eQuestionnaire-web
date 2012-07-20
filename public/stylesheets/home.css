@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-image:url(../images/bg_home.jpg);
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	font-family:"Droid Sans", Geneva, Verdana, sans-serif;
+}

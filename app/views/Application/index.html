@@ -1,4 +1,70 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'首页' /}
+#{script 'swfobject/swfobject.js'/}
+#{script 'swfobject/initSwf.js'/}
 
-#{welcome /}
+<!-- BEGIN container_12 -->
+<div class="container_12">
+     <!-- begin image slider -->
+    <div id="sliderWrapper">
+
+          <!-- begin .grid_12 - IMAGE SLIDER -->
+        <div class="grid_12">
+            <!-- PIECEMAKER SLIDER -->
+            <div id="piecemaker">
+                <p>请安装Flash Player 才能正常浏览网站</p>
+            </div>
+        </div><!-- end .grid_12 -->
+        
+    </div><!-- end image slider -->
+</div><!-- END container_12 -->
+  
+<!-- BEGIN GREYSTRIPE -->
+<div id="greyStripe">
+    <!-- BEGIN container_12 -->
+    <div class="container_12">
+      
+        <!-- begin FEATURED WORKS & PARTNERS -->
+        <div class="grid_8">
+            <h1>服务特色</h1>
+        </div>
+        
+        <div class="grid_4">
+            <h1>合作伙伴</h1>
+        </div>
+        
+        <!-- begin .grid_4 - FEATURED WORKS -->
+        <div class="grid_4">
+            <div class="works">
+              <div class="mosaic-block cover">
+                <div class="mosaic-overlay"><img src="/public/images/featured1.jpg" alt="" /></div>
+                  <a href="#" class="mosaic-backdrop">
+                    <span class="mosaic-backdrop-span">Lorem ipsum dolor sit amet</span><br /><br />Sed gravida, arcu sed facilisis varius, ligula turpis pharetra dolor, ac dictum lorem mi ut purus. Etiam malesuada tellus id lacus consectetur tempor. Mauris faucibus diam a tellus imperdiet tempor.</a>
+                </div> 
+            </div>  
+        </div><!-- end .grid_4 -->
+        
+        <!-- begin .grid_4 - FEATURED WORKS -->
+        <div class="grid_4">
+            <div class="works">
+              <div class="mosaic-block cover">
+                <div class="mosaic-overlay"><img src="/public/images/featured2.jpg" alt="" /></div>
+                  <a href="#" class="mosaic-backdrop">
+                    <span class="mosaic-backdrop-span">Lorem ipsum dolor sit amet</span><br /><br />Sed gravida, arcu sed facilisis varius, ligula turpis pharetra dolor, ac dictum lorem mi ut purus. Etiam malesuada tellus id lacus consectetur tempor. Mauris faucibus diam a tellus imperdiet tempor.</a>
+                </div>
+            </div>
+        </div><!-- end .grid_4 -->
+        
+        <!-- begin .grid_4 - PARTNERS -->
+        <div class="grid_4">
+            <div class="partners">
+                <div id="slideshow"><!-- jQuery cycle plugin -->
+                    <img src="/public/images/partner1.jpg" alt="" />
+                    <img src="/public/images/partner2.jpg" alt="" />
+                    <img src="/public/images/partner3.jpg" alt="" />
+                </div>
+            </div>  
+        </div><!-- end .grid_4 -->
+    
+    </div><!-- END container_12 -->
+</div><!-- END GREYSTRIPE -->
