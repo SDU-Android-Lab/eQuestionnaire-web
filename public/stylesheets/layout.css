@@ -6,7 +6,7 @@ GENERAL AND TYPOGRAPHY
 ---------------- */
 
 body{
-	background-image:url(../images/bg_page.jpg);
+	background-image:url(/public/images/bg_page.jpg);
 	background-repeat:repeat-x;
 	background-color:#FFFFFF;
 	font-family:"Droid Sans", Geneva, Verdana, sans-serif;
@@ -215,7 +215,7 @@ HEADER
 #header{
 	padding-top:24px;
 	height:62px;
-	background-image:url(../images/bg_header.png);
+	background-image:url(/public/images/bg_header.png);
 	background-repeat:no-repeat;
 	background-position:90% 0px;
 }
@@ -227,7 +227,7 @@ IMAGE SLIDER
 #sliderWrapper{
 	height:385px;
 	padding-top:20px;
-	background-image:url(../images/bg_slider.jpg);
+	background-image:url(/public/images/bg_slider.jpg);
 	background-repeat:no-repeat;
 	background-position:top;
 }
@@ -300,7 +300,7 @@ HOME
 	line-height:20px;
 	color:#666666;
 	margin-left:20px;
-	list-style-image:url(../images/list_image.jpg);
+	list-style-image:url(/public/images/list_image.jpg);
 	border-bottom:1px dashed #A9A29A;
 	padding-top:10px;
 	padding-bottom:10px;
@@ -444,7 +444,7 @@ FOOTER
 	margin-top:60px;
 }
 #footerBox1, #footerBox2, #footerBox3{
-	background-image:url('../images/footerbox.jpg');
+	background-image:url(/public/images/footerbox.jpg);
 	background-repeat:repeat-y;
 	background-position:right;
 	padding-bottom:20px;

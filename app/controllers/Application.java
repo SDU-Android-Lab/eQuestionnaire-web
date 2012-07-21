@@ -42,4 +42,18 @@ public class Application extends Controller {
 	public static void about() {
 		render();
 	}
+
+	/**
+	 * 注册
+	 */
+	public static void register() {
+		render();
+	}
+
+	/**
+	 * 登录
+	 */
+	public static void login() {
+		render();
+	}
 }

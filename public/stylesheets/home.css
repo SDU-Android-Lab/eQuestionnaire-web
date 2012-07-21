@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body{
-	background-image:url(../images/bg_home.jpg);
+	background-image:url(/public/images/bg_home.jpg);
 	background-repeat:repeat-x;
 	background-color:#FFFFFF;
 	font-family:"Droid Sans", Geneva, Verdana, sans-serif;
