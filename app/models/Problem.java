@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import play.data.validation.MaxSize;
 import play.db.jpa.Blob;
 import play.db.jpa.GenericModel;
 
@@ -19,22 +20,24 @@ public class Problem extends GenericModel {
 	@Id
 	@GeneratedValue
 	public Long pid;
-	public Integer ptype;// 问题类型，选择题还是简答题
-	public String pcontent;
-	public Integer pchoiceSize;
-	public Blob pimage;
-	public Blob paudio;
+	public Integer type;// 问题类型，选择题还是简答题
+	
+	@MaxSize(1000)
+	public String content;
+	public Integer choiceSize;
+	public Blob image;
+	public Blob audio;
 
 	@ManyToOne
 	public Questionnaire questionnaire;
 
-	public Problem(Integer ptype, String pcontent, Integer pchoiceSize,
-			Blob pimage, Blob paudio, Questionnaire questionnaire) {
-		this.ptype = ptype;
-		this.pcontent = pcontent;
-		this.pchoiceSize = pchoiceSize;
-		this.pimage = pimage;
-		this.paudio = paudio;
+	public Problem(Integer type, String content, Integer choiceSize,
+			Blob image, Blob audio, Questionnaire questionnaire) {
+		this.type = type;
+		this.content = content;
+		this.choiceSize = choiceSize;
+		this.image = image;
+		this.audio = audio;
 		this.questionnaire = questionnaire;
 	}
 

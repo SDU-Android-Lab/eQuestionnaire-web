@@ -10,46 +10,47 @@ import play.db.jpa.GenericModel;
 
 /**
  * 客户
+ * 
  * @author Craig Lee
- *
+ * 
  */
 @Entity
 public class Client extends GenericModel {
 	@Id
-    @GeneratedValue
+	@GeneratedValue
 	public Long cid;
-	@Column(unique=true)
-	public String cemail;
-	public String cpassword;
-	public String cname;//公司名
-	public String cprovince;//所在省份
-	public String ccity;//城市
-	public String cstreet;//街道
-	public String cphone;//联系电话
-	public String cfield;//业务领域
-	
-	public Client(String cemail, String cpassword, String cname,
-			String cprovince, String ccity, String cstreet, String cphone,
-			String cfield) {
-		this.cemail = cemail;
-		this.cpassword = cpassword;
-		this.cname = cname;
-		this.cprovince = cprovince;
-		this.ccity = ccity;
-		this.cstreet = cstreet;
-		this.cphone = cphone;
-		this.cfield = cfield;
+	@Column(unique = true)
+	public String email;
+	public String password;
+	public String companyName;// 公司名
+	public String province;// 所在省份
+	public String city;// 城市
+	public String street;// 街道
+	public String phone;// 联系电话
+	public String field;// 业务领域
+
+	public Client(String email, String password, String companyName,
+			String province, String city, String street, String phone,
+			String field) {
+		this.email = email;
+		this.password = password;
+		this.companyName = companyName;
+		this.province = province;
+		this.city = city;
+		this.street = street;
+		this.phone = phone;
+		this.field = field;
 	}
-	
+
 	/**
 	 * 登录
-	 * @param cemail
-	 * @param cpassword
+	 * 
+	 * @param email
+	 * @param password
 	 * @return
 	 */
-	public static Client login(String cemail,String cpassword){
-		return find("byCemailAndCpassword", cemail,cpassword).first();
+	public static Client login(String email, String password) {
+		return find("byEmailAndPassword", email, password).first();
 	}
-	
-	
+
 }

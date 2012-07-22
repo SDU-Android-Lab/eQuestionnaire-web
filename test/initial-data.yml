@@ -6,11 +6,20 @@
 #   password: secret
 #   fullname: Bob
 Client(apple):
-    cemail: helloapple@apple.com.cn
-    cpassword: apple123
-    cname: 苹果
-    cprovince: 北京
-    ccity: 北京
-    cstreet: 海淀区北大路
-    cphone: 010-34146854
-    cfield: 硬件制造
+    email: helloapple@apple.com.cn
+    password: apple123
+    companyName: 苹果
+    province: 北京
+    city: 北京
+    street: 王府井大街124号
+    phone: 010-34146854
+    field: 软件IT
+    
+Questionnaire(appleQuestionnaire):
+    client: apple
+    name: 2012年手机软件满意度调查
+    finishDate: 2012-10-01
+    template: 2
+    sampleSize: 50000
+    cost: 100000d
+    note: 测试

@@ -28,10 +28,10 @@ public class ClientTest extends UnitTest {
 		new Client("help@diqu.com.cn", "123456", "爱班网", "浙江", "宁波市",
 				"鄞州区泰康中路666号", "0574-28900690", "IT").save();
 
-		Client aiban = Client.find("byCemail", "help@diqu.com.cn").first();
+		Client aiban = Client.find("byEmail", "help@diqu.com.cn").first();
 
 		assertNotNull(aiban);
-		assertEquals("help@diqu.com.cn", aiban.cemail);
+		assertEquals("help@diqu.com.cn", aiban.email);
 	}
 
 	@Test

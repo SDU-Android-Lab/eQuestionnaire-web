@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import play.data.validation.MaxSize;
 import play.db.jpa.Blob;
 import play.db.jpa.GenericModel;
 
@@ -19,16 +20,18 @@ public class Advertisement extends GenericModel {
 	@Id
 	@GeneratedValue
 	public Long aid;
-	public String acontent;
-	public Blob aimage;
+	
+	@MaxSize(1000)
+	public String content;
+	public Blob image;
 
 	@ManyToOne
 	public Questionnaire questionnaire;
 
-	public Advertisement(String acontent, Blob aimage,
+	public Advertisement(String content, Blob image,
 			Questionnaire questionnaire) {
-		this.acontent = acontent;
-		this.aimage = aimage;
+		this.content = content;
+		this.image = image;
 		this.questionnaire = questionnaire;
 	}
 
