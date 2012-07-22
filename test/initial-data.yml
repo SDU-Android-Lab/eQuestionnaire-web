@@ -1,0 +1,16 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+# User(bob):
+#   email: bob@gmail.com
+#   password: secret
+#   fullname: Bob
+Client(apple):
+    cemail: helloapple@apple.com.cn
+    cpassword: apple123
+    cname: 苹果
+    cprovince: 北京
+    ccity: 北京
+    cstreet: 海淀区北大路
+    cphone: 010-34146854
+    cfield: 硬件制造
