@@ -26,16 +26,16 @@ public class Problem extends GenericModel {
 	public Blob paudio;
 
 	@ManyToOne
-	public Questionnaire pquestionnaire;
+	public Questionnaire questionnaire;
 
 	public Problem(Integer ptype, String pcontent, Integer pchoiceSize,
-			Blob pimage, Blob paudio, Questionnaire pquestionnaire) {
+			Blob pimage, Blob paudio, Questionnaire questionnaire) {
 		this.ptype = ptype;
 		this.pcontent = pcontent;
 		this.pchoiceSize = pchoiceSize;
 		this.pimage = pimage;
 		this.paudio = paudio;
-		this.pquestionnaire = pquestionnaire;
+		this.questionnaire = questionnaire;
 	}
 
 }

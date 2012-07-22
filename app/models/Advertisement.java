@@ -23,13 +23,13 @@ public class Advertisement extends GenericModel {
 	public Blob aimage;
 
 	@ManyToOne
-	public Questionnaire pquestionnaire;
+	public Questionnaire questionnaire;
 
 	public Advertisement(String acontent, Blob aimage,
-			Questionnaire pquestionnaire) {
+			Questionnaire questionnaire) {
 		this.acontent = acontent;
 		this.aimage = aimage;
-		this.pquestionnaire = pquestionnaire;
+		this.questionnaire = questionnaire;
 	}
 
 }
