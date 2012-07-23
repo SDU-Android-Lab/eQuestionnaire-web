@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Client;
 import play.mvc.Controller;
 
 /**
@@ -9,5 +10,14 @@ import play.mvc.Controller;
  * 
  */
 public class Home extends Controller {
-
+	/**
+	 * 登录
+	 */
+	public static void login(boolean isLogin, String email, String password) {
+		if (isLogin) {
+			Client client = Client.login(email, password);
+		} else {
+			render();
+		}
+	}
 }

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>登录 - iSurvey - 我们专注于移动电子调查问卷</title>
+<title>注册 - iSurvey - 我们专注于移动电子调查问卷</title>
 <style>
 
 html, body
@@ -25,7 +25,7 @@ body
 
 /*--------------------*/
 
-#login
+#register
 {
     background-color: #fff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
@@ -34,12 +34,12 @@ body
     background-image: -ms-linear-gradient(top, #fff, #eee);
     background-image: -o-linear-gradient(top, #fff, #eee);
     background-image: linear-gradient(top, #fff, #eee);  
-    height: 240px;
+    height: 450px;
     width: 400px;
     margin: -150px 0 0 -230px;
     padding: 30px;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     z-index: 0;
     -moz-border-radius: 3px;
@@ -68,7 +68,7 @@ body
           0 7px 0 rgba(0, 0, 0, .2);
 }
 
-#login:before
+#register:before
 {
     content: '';
     position: absolute;
@@ -142,8 +142,7 @@ fieldset
 
 #inputs input
 {
-    background: #f1f1f1 url(/public/images/login-sprite.png) no-repeat;
-    padding: 15px 15px 15px 30px;
+    padding: 10px 10px 10px 10px;
     margin: 0 0 10px 0;
     width: 353px; /* 353 + 2 + 45 = 400 */
     border: 1px solid #ccc;
@@ -153,16 +152,6 @@ fieldset
     -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
     -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
     box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-}
-
-#username
-{
-    background-position: 5px -2px !important;
-}
-
-#password
-{
-    background-position: 5px -52px !important;
 }
 
 #inputs input:focus
@@ -308,38 +297,83 @@ fieldset
     margin-left: 10px;
 }
 
-/*--------------------*/
-
-#back
+.error
 {
-    display: block;
-    text-align: center;
-    position: relative;
-    top: 60px;
-    color: #999;
+	color: #FC0522;
 }
-
-
 </style>
 <style type="text/css">	
 #adpacks-wrapper{font-family: Arial, Helvetica;width:280px;position:fixed;_position: absolute;bottom: 0;right: 5px;z-index: 9999;background: #eaeaea;padding: 5px;-moz-box-shadow: 0 0 2px #444;-webkit-box-shadow: 0 0 2px #444;box-shadow: 0 0 2px #444;-moz-border-radius: 5px 5px 0 0;-webkit-border-radius: 5px 5px 0 0;border-radius: 5px 5px 0 0;}				body .adpacks{background:#fff;padding:15px;margin:15px 0 0;border:3px solid #eee;}				body .one .bsa_it_ad{background:transparent;border:none;font-family:inherit;padding:0;margin:0;}/				body .one .bsa_it_ad .bsa_it_i{display:block;padding:0;float:left;margin:0 10px 0 0;}				body .one .bsa_it_ad .bsa_it_i img{padding:0;border:none;}				body .one .bsa_it_ad .bsa_it_t{padding: 0 0 6px 0; font-size: 11px;}				body .one .bsa_it_p{display:none;}				body #bsap_aplink,body #bsap_aplink:hover{display:block;font-size:9px;margin: -20px 0 0 0;text-align:right;}				body .one .bsa_it_ad .bsa_it_d{font-size: 11px;}				body .one{overflow: hidden}
 </style>
+
+<script type="text/javascript" src="/public/javascripts/provincecity.js"></script>
+#{if flash.success}
+<script type="text/javascript" >
+	function redirect(){
+		window.location.href='/login';
+	}
+    setTimeout("redirect()",2000);
+</script>
+#{/if}
 </head>
 
 <body>
 
-<form id="login">
-    <h1>登录</h1>
+<form id="register" action="/register" method="post">
+	#{if flash.success}
+	    <h1 style="color:red;">注册成功</h1>
+	#{/if}
+	#{else}  
+    <h1>注册</h1>
+	#{/else} 
+    
     <fieldset id="inputs">
-        <input id="username" type="text" placeholder="用户名" autofocus="" required="">   
-        <input id="password" type="password" placeholder="密码" required="">
+    	<span class="error">#{error 'client.email' /}</span>
+        <input name="client.email" type="text" placeholder="邮箱" autofocus="" required="" value="${flash['client.email']}">  <br/> 
+        <input name="client.password" type="password" placeholder="密码" required="" ><br/>
+        <span class="error">#{error 'client.companyName' /}</span>
+        <input name="client.companyName" type="text" placeholder="公司名称" required="" value="${flash['client.companyName']}"><br/>
+        
+        <select id="province" name="client.province" ><option value="0">请选择省份</option></select><span class="error">#{error 'client.province' /}</span>
+   		<select id="city" name="client.city"><option value="0">请选择市</option></select><span class="error">#{error 'client.city' /}</span><br/>
+   		<span class="error">#{error 'client.street' /}</span>
+   		<input name="client.street" type="text" placeholder="街道" required="" value="${flash['client.street']}"><br/>
+   		<span class="error">#{error 'client.phone' /}</span>
+   		<input name="client.phone" type="text" placeholder="联系电话 例如：+86 (10)69445464" required="" value="${flash['client.phone']}"><br/>
+   		
+   		<label for="field">公司业务领域:</label>
+   		<select id="field" name="client.field">
+   		<option value="软件与IT服务">软件与IT服务</option>
+   		<option value="电子商务">电子商务</option>
+   		<option value="餐饮住宿">餐饮住宿</option>
+   		<option value="建筑与房地产">建筑与房地产</option>
+   		<option value="政府与公共服务">政府与公共服务</option>
+   		<option value="教育培训">教育培训</option>
+   		<option value="医疗健康">医疗健康</option>
+   		<option value="文化娱乐">文化娱乐</option>
+   		<option value="商务服务业">商务服务业</option>
+   		<option value="银行、金融服务与保险">银行、金融服务与保险</option>
+   		<option value="零售">零售</option>
+   		<option value="制造">制造</option>
+   		<option value="电信">电信</option>
+   		<option value="能源">能源</option>
+   		<option value="其他">其他</option>
+   		</select>
+   		
     </fieldset>
     <fieldset id="actions">
-        <input type="submit" id="submit" value="登录">
+        <input type="submit" id="submit" value="注册">
         <input type="button" id="button" value="返回" onclick="window.location.href='/'">
-        <a href="/registerInput">注册</a>
+        <a href="/login">登录</a>
     </fieldset>
+    <input type="hidden" name="isReg" value="true">
 </form>
 </body>
+
+<script type="text/javascript">
+    //<![CDATA[
+    ProvinceCityComponent.init("province", "city");
+    //]]>
+</script>
 </html>
 

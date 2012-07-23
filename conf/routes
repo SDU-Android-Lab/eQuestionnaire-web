@@ -8,9 +8,9 @@ GET     /plan                                   Application.plan
 GET     /service                                Application.service
 GET     /clients                                Application.clients
 GET     /about                                  Application.about
-GET     /registerInput                          Application.registerInput
 *       /register                               Application.register
-GET     /loginInput								Application.loginInput
+*       /login								    Home.login
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
