@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>注册 - iSurvey - 我们专注于移动电子调查问卷</title>
+<title>登录 - iSurvey - 我们专注于移动电子调查问卷</title>
 <style>
 
 html, body
@@ -25,7 +25,7 @@ body
 
 /*--------------------*/
 
-#register
+#login
 {
     background-color: #fff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
@@ -68,7 +68,7 @@ body
           0 7px 0 rgba(0, 0, 0, .2);
 }
 
-#register:before
+#login:before
 {
     content: '';
     position: absolute;
@@ -308,6 +308,16 @@ fieldset
     margin-left: 10px;
 }
 
+/*--------------------*/
+
+#back
+{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    color: #999;
+}
 
 
 </style>
@@ -318,17 +328,18 @@ fieldset
 
 <body>
 
-<form id="register">
-    <h1>注册</h1>
+<form id="login">
+    <h1>登录</h1>
     <fieldset id="inputs">
         <input id="username" type="text" placeholder="用户名" autofocus="" required="">   
         <input id="password" type="password" placeholder="密码" required="">
     </fieldset>
     <fieldset id="actions">
-        <input type="submit" id="submit" value="注册">
-        <input type="button" id="button" value="返回" onclick="window.history.back();">
-        <a href="/register">注册</a>
+        <input type="submit" id="submit" value="登录">
+        <input type="button" id="button" value="返回" onclick="window.location.href='/'">
+        <a href="/registerInput">注册</a>
     </fieldset>
 </form>
-
+</body>
+</html>
 
