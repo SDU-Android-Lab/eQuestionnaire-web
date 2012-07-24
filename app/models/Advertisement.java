@@ -1,5 +1,6 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,16 +21,15 @@ public class Advertisement extends GenericModel {
 	@Id
 	@GeneratedValue
 	public Long aid;
-	
-	@MaxSize(1000)
+
+	@Column(columnDefinition = "TEXT", nullable = false)
 	public String content;
 	public Blob image;
 
 	@ManyToOne
 	public Questionnaire questionnaire;
 
-	public Advertisement(String content, Blob image,
-			Questionnaire questionnaire) {
+	public Advertisement(String content, Blob image, Questionnaire questionnaire) {
 		this.content = content;
 		this.image = image;
 		this.questionnaire = questionnaire;

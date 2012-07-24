@@ -45,17 +45,6 @@ public class Client extends GenericModel {
 	}
 
 	/**
-	 * 登录
-	 * 
-	 * @param email
-	 * @param password
-	 * @return
-	 */
-	public static Client login(String email, String password) {
-		return find("byEmailAndPassword", email, password).first();
-	}
-
-	/**
 	 * 判断email是否被注册
 	 * 
 	 * @param email

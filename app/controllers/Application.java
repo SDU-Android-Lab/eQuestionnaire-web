@@ -44,8 +44,8 @@ public class Application extends Controller {
 	/**
 	 * 注册
 	 */
-	public static void register(boolean isReg,Client client) {
-		if (isReg) {
+	public static void register(boolean state, Client client) {
+		if (state) {
 			ValidationResult emailResult = validation.email(client.email);
 			if (emailResult.ok) {
 				if (Client.isEmailRegistered(client.email)) {

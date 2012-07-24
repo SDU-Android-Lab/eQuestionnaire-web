@@ -318,7 +318,10 @@ fieldset
     top: 60px;
     color: #999;
 }
-
+.error
+{
+	color: #FC0522;
+}
 
 </style>
 <style type="text/css">	
@@ -329,17 +332,24 @@ fieldset
 <body>
 
 <form id="login" action="/login" method="post">
-    <h1>登录</h1>
+	#{if flash.unsuccess}
+		<h1 style="color:red;">登录失败</h1>
+	#{/if}
+	#{else }
+    	<h1>登录</h1>
+	#{/else}
     <fieldset id="inputs">
-        <input id="email" type="text" placeholder="Email" autofocus="" required="">   
-        <input id="password" type="password" placeholder="密码" required="">
+    	<span class="error">#{error 'email' /}</span>
+        <input id="email" name="email"type="text" placeholder="Email" autofocus="" required="" value="${flash['email']}">   
+        <span class="error">#{error 'password' /}</span>
+        <input id="password" name="password" type="password" placeholder="密码" required="">
     </fieldset>
     <fieldset id="actions">
         <input type="submit" id="submit" value="登录">
         <input type="button" id="button" value="返回" onclick="window.location.href='/'">
         <a href="/register">注册</a>
     </fieldset>
-    <input type="hidden" name="isLogin" value="true">
+    <input type="hidden" name="state" value="true">
 </form>
 </body>
 </html>

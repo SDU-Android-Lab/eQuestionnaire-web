@@ -34,10 +34,4 @@ public class ClientTest extends UnitTest {
 		assertEquals("help@diqu.com.cn", aiban.email);
 	}
 
-	@Test
-	public void loginAsClient() {
-		assertNotNull(Client.login("helloapple@apple.com.cn", "apple123"));
-		assertNull(Client.login("helloapple@apple.com.cn", "apple133"));
-		assertNull(Client.login("helloapple@apple.com", "apple123"));
-	}
 }

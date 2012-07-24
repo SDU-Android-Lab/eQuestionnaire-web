@@ -1,5 +1,6 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,8 +22,8 @@ public class Problem extends GenericModel {
 	@GeneratedValue
 	public Long pid;
 	public Integer type;// 问题类型，选择题还是简答题
-	
-	@MaxSize(1000)
+
+	@Column(columnDefinition = "TEXT", nullable = false)
 	public String content;
 	public Integer choiceSize;
 	public Blob image;
