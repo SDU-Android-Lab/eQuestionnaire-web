@@ -68,7 +68,14 @@ public class Home extends Controller {
 	 * 创建调查
 	 */
 	public static void newQuestionnaire() {
+		render();
+	}
 
+	/**
+	 * 公司资料
+	 */
+	public static void profile() {
+		render();
 	}
 
 }
