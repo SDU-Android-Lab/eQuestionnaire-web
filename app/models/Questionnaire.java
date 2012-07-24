@@ -41,6 +41,7 @@ public class Questionnaire extends GenericModel {
 	public Integer template;// 使用的模版
 	public Integer sampleSize;// 调查样本数量
 	public Double cost;// 价格
+	public Integer status;// 状态，分为 未开始、进行中、 结束状态
 	public String note;// 备注
 
 	public Questionnaire(Client client, String name, Date finishDate,

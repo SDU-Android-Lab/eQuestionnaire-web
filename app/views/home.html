@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Website title -->
+<title>#{get 'title' /} - iSurvey - 我们专注于移动电子调查问卷</title>
+	<!-- Begin Stylesheets -->
+		<link rel="stylesheet" href="/public/stylesheets/reset.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/public/stylesheets/960_12_col.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/public/stylesheets/home_layout.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/public/stylesheets/ui.totop.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/public/stylesheets/superfish.css" type="text/css" media="screen" />
+	<!-- End Stylesheets -->
+    
+    <!-- Begin Google Web Fonts -->
+    	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<!-- End Google Web Fonts -->
+    
+	<!-- Begin JavaScript -->
+    
+    <!-- jQuery -->
+		<script type="text/javascript" src="/public/javascripts/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="/public/javascripts/easing.js"></script>
+        
+    <!-- jQuery plugins -->
+        <script type="text/javascript" src="/public/javascripts/jquery.ui.totop.js"></script>
+        <script type="text/javascript" src="/public/javascripts/superfish.js"></script>
+        <script type="text/javascript" src="/public/javascripts/hoverIntent.js"></script>
+        <script type="text/javascript" src="/public/javascripts/effects.js"></script>
+    <!-- jQuery plugin init -->
+        <script type="text/javascript">
+		$(document).ready(function(){   
+			
+			// SCROLL TO TOP BUTTON
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+			// SUBMENU
+			$('ul.sf-menu').superfish(); 
+
+		});
+		</script>
+
+	<!-- End JavaScript -->
+	
+</head>
+
+<body>
+<!-- BEGIN container_12 -->
+<div class="container_12">
+
+    <!-- BEGIN HEADER -->
+    <div id="header">
+        
+        <!-- begin .grid_3 - LOGO -->
+        <div id="logo" class="grid_3">
+             <a href="/"><img src="/public/images/logo.png" alt="iSurvey" /></a>
+        </div><!-- end .grid_3 -->
+        
+        
+        <!-- begin .grid_9 - NAVIGATION -->
+        <div id="navigation" class="grid_9">
+            
+            <ul class="sf-menu">
+                <li class="top-item">
+                    <a href="@{Home.index()}">我的调查</a><!-- main item -->
+                </li>
+                <li class="top-item">
+                    <a href="@{Home.newQuestionnaire()}">新建调查</a><!-- main item -->
+                </li>
+                <li class="top-item">
+                    <a href="@{Home.index()}">公司资料</a><!-- main item -->
+                </li>
+                <li class="top-item" style="margin-left: 40px">
+                    <a href="@{Home.logout()}">|登出|</a><!-- main item -->
+                </li>	
+            </ul>
+        </div><!-- end .grid_9 -->
+        
+    </div><!-- END HEADER -->
+</div><!-- END container_12 -->
+
+
+
+ #{doLayout /}
+
+
+
+
+<!-- BEGIN FOOTER -->
+<div id="footer">
+	<!-- BEGIN container_12 -->
+    <div class="container_12">
+    
+    	<!-- begin .grid_3  -->
+        <div class="grid_3" id="footerBox1">
+        	<img src="/public/images/footer/icon1.jpg" alt="" />
+            <p class="footerTitle">地址</p>
+            <p class="footerText">
+                山东省济南市高新开发区山东大学齐鲁软件学院<br/>
+                联系电话:0531-88391516 <br/>
+                邮政编码:250101<br/><br/>
+            </p>
+        </div><!-- end .grid_3 -->
+        
+        <!-- begin .grid_3  -->
+        <div class="grid_3" id="footerBox2">
+        	<img src="/public/images/footer/icon2.jpg" alt="" />
+            <p class="footerTitle">链接</p>
+            <p class="footerText">
+            	<a class="links" href="http://www.sdu.edu.cn/">山东大学</a><br />
+                <a class="links" href="http://www.sc.sdu.edu.cn">山东大学软件学院</a><br />
+                <a class="links" href="http://www.fwwb.org.cn/">第三届中国大学生服务外包大赛</a><br />
+
+            </p>
+        </div><!-- end .grid_3 -->
+        
+        <!-- begin .grid_3  -->
+        <div class="grid_3" id="footerBox3">
+        	<img src="/public/images/footer/icon3.jpg" alt="" />
+            <p class="footerTitle">微博</p>
+            <p class="footerText">
+                "iSurvey - 我们专注于移动电子调查问卷"<br />
+                <a class="links" href="http://weibo.com">weibo.com</a>
+            </p>
+        </div><!-- end .grid_3 -->
+        
+        <!-- begin .grid_3  -->
+        <div class="grid_3" id="footerBox4">
+        	<img src="/public/images/footer/icon4.jpg" alt="" />
+            <p class="footerTitle">SNS</p>
+            <a href="http://weibo.com/" target="_blank"><img class="socialIcon" src="/public/images/social/sina.png" alt=""/></a>
+            <a href="http://www.renren.com/" target="_blank"><img class="socialIcon" src="/public/images/social/renren.png" alt="" /></a>
+            <a href="http://www.kaixin001.com/" target="_blank"><img class="socialIcon" src="/public/images/social/kaixin.png" alt="" /></a><br />
+            <a href="http://t.qq.com/" target="_blank"><img class="socialIcon" src="/public/images/social/t.qq.png" alt="" /></a>
+            <a href="http://qzone.qq.com/" target="_blank"><img class="socialIcon" src="/public/images/social/qzone.png" alt="" /></a>
+            <a href="http://www.douban.com" target="_blank"><img class="socialIcon" src="/public/images/social/douban.png" alt="" /></a>
+        </div><!-- end .grid_3 -->
+        
+    </div><!-- END container_12 -->
+</div><!-- END FOOTER -->
+
+</body>
+</html>

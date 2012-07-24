@@ -55,4 +55,20 @@ public class Home extends Controller {
 	public static void index() {
 		render();
 	}
+
+	/**
+	 * 登出
+	 */
+	public static void logout() {
+		session.clear();
+		Application.index();
+	}
+
+	/**
+	 * 创建调查
+	 */
+	public static void newQuestionnaire() {
+
+	}
+
 }
