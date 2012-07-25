@@ -4,12 +4,13 @@
 
 <!-- BEGIN container_12 -->
 <div class="container_12">
- <!-- begin TABLES -->
+ 
 	 <div class="line">
  		<div class="grid_4">
         	<h1 id="typh1">我的调查问卷</h1>
         </div>
      </div>
+     <!-- begin TABLES -->
     <div class="line">
     	<div class="grid_12">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -45,7 +46,7 @@
 	                <tr>
                     <td>${questionnaire.qid}</td>
                     <td>${questionnaire.name}</td>
-                    <td><a href="#">查看</a></td>
+                    <td><a href="@{Home.viewQuestionnaire()}?qid=${questionnaire.qid}">查看</a></td>
                     </tr>
 	            #{/list}
             	</tbody>

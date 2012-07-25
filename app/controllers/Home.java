@@ -113,11 +113,18 @@ public class Home extends Controller {
 		}
 	}
 
+	public static void viewQuestionnaire(long qid){
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		render(questionnaire);
+	}
+	
 	/**
 	 * 公司资料
 	 */
 	public static void profile() {
 		render();
 	}
+	
+	
 
 }
