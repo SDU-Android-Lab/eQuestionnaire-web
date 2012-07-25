@@ -85,7 +85,7 @@ public class Home extends Controller {
 		List<Questionnaire> questionnaires = Questionnaire
 				.find("select q from Questionnaire q where q.client = ? order by q.createDate desc",
 						client).from(from).fetch(PAGER);
-		render(questionnaires, from,max);
+		render(questionnaires, from, max);
 	}
 
 	/**
@@ -113,18 +113,40 @@ public class Home extends Controller {
 		}
 	}
 
-	public static void viewQuestionnaire(long qid){
+	/**
+	 * 查看调查问卷
+	 * 
+	 * @param qid
+	 */
+	public static void viewQuestionnaire(long qid) {
 		Questionnaire questionnaire = Questionnaire.findById(qid);
 		render(questionnaire);
 	}
-	
+
+	public static void addQuestion(boolean state, long qid) {
+		if (state) {
+			viewQuestionnaire(qid);
+		} else {
+			params.flash();
+			render();
+		}
+
+	}
+
+	public static void addAdvertisement(boolean state, long qid) {
+		if (state) {
+			viewQuestionnaire(qid);
+		} else {
+			params.flash();
+			render();
+		}
+	}
+
 	/**
 	 * 公司资料
 	 */
 	public static void profile() {
 		render();
 	}
-	
-	
 
 }

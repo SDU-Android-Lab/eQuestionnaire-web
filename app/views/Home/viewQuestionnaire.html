@@ -5,11 +5,22 @@
 <!-- BEGIN container_12 -->
 <div class="container_12">
 	<div class="line">
- 		<div class="grid_4">
-        	<h1 id="typh1">${questionnaire.name}</h1>
+ 		<div class="grid_8">
+        	<h1 id="typh1">“${questionnaire.name}”</h1>
         </div>
      </div>
-     
+</div><!-- END container_12 -->
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+     <div class="line">
+ 		<div class="grid_4">
+        	<h2>问题列表</h2>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.addQuestion()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加问题</button></a>
+        </div>
+     </div>
       <!-- begin TABLES -->
     <div class="line">
     	<div class="grid_12">
@@ -35,4 +46,39 @@
         <div class="clear"></div>
     </div><!-- end TABLES -->
      
+</div><!-- END container_12 -->
+<!-- BEGIN container_12 -->
+<div class="container_12">
+     <div class="line">
+ 		<div class="grid_4">
+        	<h2>广告列表</h2>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.addAdvertisement()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加广告</button></a>
+        </div>
+     </div>
+      <!-- begin TABLES -->
+    <div class="line">
+    	<div class="grid_12">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                    <th>编号</th>
+                    <th>标题</th>
+                    <th>操作</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                    
+                    </tr>
+            	</tfoot>
+            	<tbody>
+            	
+            	</tbody>
+            	
+            </table>
+        </div>
+        <div class="clear"></div>
+    </div><!-- end TABLES -->
 </div><!-- END container_12 -->
