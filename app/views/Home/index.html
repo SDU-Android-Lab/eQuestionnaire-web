@@ -22,7 +22,22 @@
                 </thead>
                 <tfoot>
                     <tr>
-                    <td colspan="4"><a href="#">首页</a>&nbsp;&nbsp;<a href="#">上一页</a>&nbsp;&nbsp;<a href="#">下一页</a>&nbsp;&nbsp;<a href="#">末页</a></td>
+                    <td colspan="4"><a href="@{Home.index(0)}">首页</a>&nbsp;&nbsp;
+                    #{if from-10>=0}
+                        <a href="@{Home.index(from-10)}">上一页</a>
+                    #{/if}
+                    #{else }
+                       	上一页
+                    #{/else}
+                    &nbsp;&nbsp;
+                    #{if from+10<max}
+                        <a href="@{Home.index(from+10)}">下一页</a>
+                    #{/if}
+                    #{else }
+                       	下一页
+                    #{/else}
+                    &nbsp;&nbsp;
+                    <a href="@{Home.index(((int)(max-1)/10)*10)}">末页</a></td>
                     </tr>
             	</tfoot>
             	<tbody>

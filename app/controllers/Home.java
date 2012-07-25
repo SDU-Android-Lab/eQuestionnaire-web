@@ -5,6 +5,7 @@ import java.util.List;
 
 import models.Client;
 import models.Questionnaire;
+import play.db.jpa.GenericModel.JPAQuery;
 import play.mvc.Before;
 import play.mvc.Controller;
 
@@ -51,14 +52,14 @@ public class Home extends Controller {
 	 */
 	public static void login(boolean state, String email, String password) {
 		if (session.get("cid") != null)
-			index(1);
+			index(0);
 
 		if (state) {
 			Client client = Client.find("byEmail", email).first();
 			if (client != null && client.password.equals(password)) {
 				// 登录成功
 				session.put("cid", client.cid);
-				index(1);
+				index(0);
 			} else {
 				// 登录失败
 				if (client == null) {
@@ -80,10 +81,11 @@ public class Home extends Controller {
 	 */
 	public static void index(int from) {
 		Client client = Client.findById(Long.parseLong(session.get("cid")));
+		long max = Questionnaire.count("byClient", client);
 		List<Questionnaire> questionnaires = Questionnaire
 				.find("select q from Questionnaire q where q.client = ? order by q.createDate desc",
 						client).from(from).fetch(PAGER);
-		render(questionnaires);
+		render(questionnaires, from,max);
 	}
 
 	/**
@@ -105,7 +107,7 @@ public class Home extends Controller {
 			questionnaire.createDate = new Date();
 			questionnaire.status = Q_STATUS_UNSTARTED;
 			questionnaire.save();
-			index(1);
+			index(0);
 		} else {
 			render();
 		}
