@@ -90,4 +90,15 @@ public class Questionnaire extends GenericModel {
 		this.save();
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		return "Questionnaire [qid=" + qid + ", client=" + client + ", name="
+				+ name + ", createDate=" + createDate + ", finishDate="
+				+ finishDate + ", problems=" + problems + ", advertisements="
+				+ advertisements + ", template=" + template + ", sampleSize="
+				+ sampleSize + ", cost=" + cost + ", status=" + status
+				+ ", note=" + note + "]";
+	}
+	
 }

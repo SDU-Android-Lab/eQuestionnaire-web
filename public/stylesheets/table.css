@@ -1,0 +1,39 @@
+/* ----------------
+TABLE
+---------------- */
+
+table
+{
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+}
+table th
+{
+	font-family:"Droid Sans", Geneva, Verdana, sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	padding: 15px;
+	background: #DDDDDD;
+	border-top: 4px solid #CCCCCC;
+	border-bottom: 1px solid #fff;
+	color: #21BAB8;
+}
+table td
+{
+	padding: 15px;
+	background: #EEEEEE; 
+	border-bottom: 1px solid #fff;
+	color: #666666;
+	border-top: 1px solid transparent;
+}
+table tr:hover td
+{
+	background: #666666;
+	color: #FFFFFF;
+}
+table tfoot tr td
+{
+	text-align:center;
+	background: #DDDDDD;
+}

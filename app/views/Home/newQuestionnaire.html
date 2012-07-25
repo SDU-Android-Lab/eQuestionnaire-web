@@ -1,4 +1,50 @@
 #{extends 'home.html' /}
 #{set title:'新建调查' /}
 
-Here goes your content.
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_4">
+        	<h1 id="typh1">新建调查问卷</h1>
+        </div>
+     </div>
+		<form method="post" action="@{Home.newQuestionnaire()}">
+		<script type="text/javascript" src="/public/javascripts/datepicker.js"></script>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+            	<tbody>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">调查问卷名称：</td>
+                    <td style="padding: 15px;"><input type="text"  name="questionnaire.name"></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">完成日期：</td>
+                    <td style="padding: 15px;"><input type="text" name="questionnaire.finishDate" onclick="fPopCalendar(event,this,this)" onfocus="this.select()" readonly="readonly" ></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">移动客户端模版：</td>
+                    <td style="padding: 15px;">
+                    	<select name="questionnaire.template">
+						<option value="0" selected>Gallery</option>
+						<option value="1">Grid</option>
+						<option value="2">List</option>
+						</select>
+					</td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">调查样本数量：</td>
+                    <td style="padding: 15px;"><input type="text" name="questionnaire.sampleSize"></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">备注：</td>
+                    <td style="padding: 15px;"><textarea name="questionnaire.note"></textarea></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;"><input type="submit" value="提交"></td>
+                    <td style="padding: 15px;"><input type="reset"  value="重置"></td>
+                    </tr>
+            	</tbody>            	
+            </table>
+            <input type="hidden" name="state" value="true">
+		</form>
+</div><!-- END container_12 -->
