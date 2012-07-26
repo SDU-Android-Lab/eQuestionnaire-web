@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import models.Client;
+import models.Problem;
 import models.Questionnaire;
-import play.db.jpa.GenericModel.JPAQuery;
 import play.mvc.Before;
 import play.mvc.Controller;
 
@@ -123,12 +123,15 @@ public class Home extends Controller {
 		render(questionnaire);
 	}
 
-	public static void addQuestion(boolean state, long qid) {
+	public static void addProblem(boolean state, long qid,Problem problem) {
 		if (state) {
+			Questionnaire questionnaire = Questionnaire.findById(qid);
+			questionnaire.problems.add(problem);
+			questionnaire.save();
 			viewQuestionnaire(qid);
 		} else {
-			params.flash();
-			render();
+			Questionnaire questionnaire = Questionnaire.findById(qid);
+			render(questionnaire);
 		}
 
 	}

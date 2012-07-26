@@ -44,21 +44,4 @@ public class QuestionnaireTest extends UnitTest {
 		questionnaire.delete();
 		assertEquals(1, Questionnaire.count());
 	}
-
-	@Test
-	public void addProblemsAndAds() {
-		Client apple = Client.find("byEmail", "helloapple@apple.com.cn")
-				.first();
-		assertEquals(1, Questionnaire.count());
-		Questionnaire questionnaire = Questionnaire.find("byClient", apple)
-				.first();
-		assertNotNull(questionnaire);
-		assertEquals(0, Problem.count());
-		questionnaire.addProblem(0, "你满意这款手机软件么？ A、满意  B、还行  C、不满意", 3, null,
-				null);
-		assertEquals(1, Problem.count());
-		questionnaire.addAdvertisement("the new software", null);
-		assertEquals(1, Advertisement.count());
-		
-	}
 }

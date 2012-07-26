@@ -58,39 +58,6 @@ public class Questionnaire extends GenericModel {
 		this.note = note;
 	}
 
-	/**
-	 * 添加一个问题
-	 * 
-	 * @param ptype
-	 * @param pcontent
-	 * @param pchoiceSize
-	 * @param pimage
-	 * @param paudio
-	 * @return
-	 */
-	public Questionnaire addProblem(Integer type, String content,
-			Integer choiceSize, Blob image, Blob audio) {
-		Problem newProblem = new Problem(type, content, choiceSize, image,
-				audio, this);
-		this.problems.add(newProblem);
-		this.save();
-		return this;
-	}
-
-	/**
-	 * 添加一个广告
-	 * 
-	 * @param acontent
-	 * @param aimage
-	 * @return
-	 */
-	public Questionnaire addAdvertisement(String content, Blob image) {
-		Advertisement newAd = new Advertisement(content, image, this);
-		this.advertisements.add(newAd);
-		this.save();
-		return this;
-	}
-
 	@Override
 	public String toString() {
 		return "Questionnaire [qid=" + qid + ", client=" + client + ", name="

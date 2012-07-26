@@ -33,7 +33,7 @@
         	<h2>问题列表</h2>
         </div>
         <div class="grid_4">
-        	<a href="@{Home.addQuestion()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加问题</button></a>
+        	<a href="@{Home.addProblem()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加问题</button></a>
         </div>
      </div>
       <!-- begin TABLES -->
@@ -47,13 +47,14 @@
                     <th>操作</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                    
-                    </tr>
-            	</tfoot>
             	<tbody>
-            	
+            		#{list items:questionnaire.problems, as:'problem'}
+		                <tr>
+	                    <td>${problem.pid}</td>
+	                    <td> ${problem.content.length() > 30 ? problem.content[0..30] + '…' : object.content}</td>
+	                    <td>查看</td>
+	                    </tr>
+	            	#{/list}
             	</tbody>
             	
             </table>
@@ -83,11 +84,6 @@
                     <th>操作</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                    
-                    </tr>
-            	</tfoot>
             	<tbody>
             	
             	</tbody>

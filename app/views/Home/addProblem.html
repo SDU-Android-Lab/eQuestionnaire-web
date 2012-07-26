@@ -1,0 +1,98 @@
+#{extends 'home.html' /}
+#{set title:'添加问题' /}
+
+<script type="text/javascript">
+      	function CheckImageType()
+     {
+       var obj=document.getElementById('problem.image');
+       if(obj.value!='')
+       {
+		var stuff=obj.value.match(/^(.*)(/.)(.{1,8})$/)[3]; 
+		if(stuff!='png' && stuff!='PNG')
+		{
+			alert('图片文件类型不正确，请选择.png文件');
+			return false;
+        }
+       }
+        return true;
+     }
+	function CheckAudioType()
+     {
+       var obj=document.getElementById('problem.audio');
+       if(obj.value!='')
+       {
+		var stuff=obj.value.match(/^(.*)(/.)(.{1,8})$/)[3]; 
+		if(stuff!='mp3' && stuff!='MP3')
+		{
+			alert('音频文件类型不正确，请选择.mp3文件');
+			return false;
+        }
+       }
+        return true;
+     }
+</script>
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_8">
+        	<h1 id="typh1">“${questionnaire.name}” —— 添加问题</h1>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.viewQuestionnaire()}?qid=${questionnaire.qid}"><button  style="margin-bottom: 15px;margin-top: 25px;">返回问题列表</button></a>
+        </div>
+     </div>
+		<form method="post" action="@{Home.addProblem()}" enctype="multipart/form-data" onsubmit="return CheckImageType()">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+            	<tbody>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">*题目内容：</td>
+                    <td style="padding: 15px;"><textarea name="problem.content" rows="10" cols="60" required=""></textarea></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">*问题类型：</td>
+                    <td style="padding: 15px;">
+						<select name="problem.type">
+							<option value="0" selected>选择题</option>
+							<option value="1">简述题</option>
+						</select>
+					</td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">选项个数（若为选择题必选）：</td>
+                    <td style="padding: 15px;">
+						<select name="problem.choiceSize">
+							<option value="2" selected>2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+					</td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">图片（PNG格式）：</td>
+                    <td style="padding: 15px;"><input type="file" id="problem.image" name="problem.image"></td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">音频（MP3格式）：</td>
+                    <td style="padding: 15px;"><input type="file" id="problem.audio" name="problem.audio"></td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;"><input type="submit" value="提交"></td>
+                    <td style="padding: 15px;"><input type="reset"  value="重置"></td>
+                    </tr>
+            	</tbody>            	
+            </table>
+            <input type="hidden" name="qid" value="${questionnaire.qid}">
+            <input type="hidden" name="state" value="true">
+		</form>
+</div><!-- END container_12 -->
