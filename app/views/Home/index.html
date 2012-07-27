@@ -49,8 +49,8 @@
                     <td>${questionnaire.name}</td>
                     <td>
                     #{if questionnaire.cost==null || questionnaire.cost==0}
-                    <a href="@{Home.payBill()}?qid=${questionnaire.qid}">支付</a>&nbsp;&nbsp;
                     <a href="@{Home.editQuestionnaire()}?qid=${questionnaire.qid}">编辑</a>&nbsp;&nbsp;
+                    <a href="@{Home.payBill()}?qid=${questionnaire.qid}">支付</a>&nbsp;&nbsp;
                     #{/if}
                     #{else}
                     <a href="@{Home.viewQuestionnaire()}?qid=${questionnaire.qid}">查看</a>&nbsp;&nbsp;

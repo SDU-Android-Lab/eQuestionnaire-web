@@ -88,7 +88,15 @@
                     </tr>
                 </thead>
             	<tbody>
-            	
+            	%{int adNum = 1;}%
+            		#{list items:questionnaire.advertisements, as:'ad'}
+		                <tr>
+	                    <td>${adNum}</td>
+	                    <td> ${ad.content.length() > 30 ? ad.content[0..30] + '…' : ad.content}</td>
+	                    <td>查看</td>
+	                    </tr>
+	                    %{adNum++;}%
+	            	#{/list}
             	</tbody>
             	
             </table>

@@ -1,4 +1,34 @@
 #{extends 'home.html' /}
 #{set title:'添加广告' /}
 
-${flash['qid']}
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_8">
+        	<h1 id="typh1">“${questionnaire.name}” —— 添加广告</h1>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.editQuestionnaire()}?qid=${questionnaire.qid}"><button  style="margin-bottom: 15px;margin-top: 25px;">返回问题列表</button></a>
+        </div>
+     </div>
+		<form method="post" action="@{Home.addAdvertisement()}" enctype="multipart/form-data" >
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+            	<tbody>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">文字内容：</td>
+                    <td style="padding: 15px;"><textarea name="advertisement.content" rows="10" cols="60"></textarea></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">图片（PNG格式）：</td>
+                    <td style="padding: 15px;"><input type="file" id="problem.image" name="advertisement.image"></td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;"><input type="submit" value="提交"></td>
+                    <td style="padding: 15px;"><input type="reset"  value="重置"></td>
+                    </tr>
+            	</tbody>            	
+            </table>
+            <input type="hidden" name="qid" value="${questionnaire.qid}">
+            <input type="hidden" name="state" value="true">
+		</form>
+</div><!-- END container_12 -->

@@ -3,6 +3,7 @@ package controllers;
 import java.util.Date;
 import java.util.List;
 
+import models.Advertisement;
 import models.Client;
 import models.Problem;
 import models.Questionnaire;
@@ -145,12 +146,11 @@ public class Home extends Controller {
 	 * @param problem
 	 */
 	public static void addProblem(boolean state, long qid, Problem problem) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
 		if (state) {
-			Questionnaire questionnaire = Questionnaire.findById(qid);
 			questionnaire.addProblem(problem);
 			editQuestionnaire(qid);
 		} else {
-			Questionnaire questionnaire = Questionnaire.findById(qid);
 			if (questionnaire.cost != null) {
 				// 已经付费
 				viewQuestionnaire(qid);
@@ -160,12 +160,32 @@ public class Home extends Controller {
 
 	}
 
-	public static void addAdvertisement(boolean state, long qid) {
+	/**
+	 * 添加广告
+	 * 
+	 * @param state
+	 * @param qid
+	 * @param advertisement
+	 */
+	public static void addAdvertisement(boolean state, long qid,
+			Advertisement advertisement) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
 		if (state) {
-			editQuestionnaire(qid);
+			if (advertisement.content == null
+					&& advertisement.image.get() == null) {
+				params.flash();
+				render();
+			} else {
+				// 保存
+				questionnaire.addAdvertisement(advertisement);
+				editQuestionnaire(qid);
+			}
 		} else {
-			params.flash();
-			render();
+			if (questionnaire.cost != null) {
+				// 已经付费
+				viewQuestionnaire(qid);
+			} else
+				render(questionnaire);
 		}
 	}
 
@@ -188,13 +208,8 @@ public class Home extends Controller {
 	/**
 	 * 公司资料
 	 */
-	public static void profile(boolean state) {
-		if (state) {
-			// 提交更改
-		} else {
-			Client client = Client.findById(Long.parseLong(session.get("cid")));
-			render(client);
-		}
-
+	public static void profile() {
+		Client client = Client.findById(Long.parseLong(session.get("cid")));
+		render(client);
 	}
 }
