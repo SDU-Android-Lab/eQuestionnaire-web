@@ -1,4 +1,36 @@
 #{extends 'home.html' /}
 #{set title:'公司资料' /}
 
-Here goes your content.
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_4">
+        	<h1 id="typh1">查看资料</h1>
+        </div>
+     </div>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+     	<tbody>
+			<tr>
+			<td style="padding: 15px;text-align:right;">公司名称：</td>
+			<td style="padding: 15px;">${client.companyName}</td>
+			</tr>
+			<tr>
+			<td style="padding: 15px;text-align:right;">公司地址：</td>
+			<td style="padding: 15px;">${client.province}${client.city}${client.street}</td>
+			</tr>
+			<tr>
+			<td style="padding: 15px;text-align:right;">公司业务领域:</td>
+			<td style="padding: 15px;">${client.field}</td>
+			</tr>
+			<tr>
+			<td style="padding: 15px;text-align:right;">注册邮箱:</td>
+			<td style="padding: 15px;">${client.email}</td>
+			</tr>
+			<tr>
+			<td style="padding: 15px;text-align:right;">联系电话:</td>
+			<td style="padding: 15px;">${client.phone}</td>
+			</tr>
+		</tbody>  
+     </table>
+     
+</div><!-- END container_12 -->

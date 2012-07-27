@@ -188,7 +188,13 @@ public class Home extends Controller {
 	/**
 	 * 公司资料
 	 */
-	public static void profile() {
-		render();
+	public static void profile(boolean state) {
+		if (state) {
+			// 提交更改
+		} else {
+			Client client = Client.findById(Long.parseLong(session.get("cid")));
+			render(client);
+		}
+
 	}
 }
