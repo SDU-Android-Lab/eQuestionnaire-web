@@ -58,6 +58,32 @@ public class Questionnaire extends GenericModel {
 		this.note = note;
 	}
 
+	/**
+	 * 添加问题
+	 * 
+	 * @param problem
+	 * @return
+	 */
+	public Questionnaire addProblem(Problem problem) {
+		problem.questionnaire = this;
+		this.problems.add(problem);
+		this.save();
+		return this;
+	}
+
+	/**
+	 * 添加广告
+	 * 
+	 * @param advertisement
+	 * @return
+	 */
+	public Questionnaire addAdvertisement(Advertisement advertisement) {
+		advertisement.questionnaire = this;
+		this.advertisements.add(advertisement);
+		this.save();
+		return this;
+	}
+
 	@Override
 	public String toString() {
 		return "Questionnaire [qid=" + qid + ", client=" + client + ", name="
@@ -67,5 +93,5 @@ public class Questionnaire extends GenericModel {
 				+ sampleSize + ", cost=" + cost + ", status=" + status
 				+ ", note=" + note + "]";
 	}
-	
+
 }

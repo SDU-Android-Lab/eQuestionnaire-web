@@ -1,5 +1,5 @@
 #{extends 'home.html' /}
-#{set title:'查看调查问卷'/}
+#{set title:'编辑调查问卷'/}
 
 <link rel="stylesheet" href="/public/stylesheets/table.css" type="text/css" media="screen" />
 
@@ -32,6 +32,9 @@
      <div class="line">
  		<div class="grid_4">
         	<h2>问题列表</h2>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.addProblem()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加问题</button></a>
         </div>
      </div>
       <!-- begin TABLES -->
@@ -68,6 +71,9 @@
      <div class="line">
  		<div class="grid_4">
         	<h2>广告列表</h2>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.addAdvertisement()}?qid=${questionnaire.qid}"><button style="margin-bottom: 15px;margin-top: 25px;">添加广告</button></a>
         </div>
      </div>
       <!-- begin TABLES -->

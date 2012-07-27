@@ -1,37 +1,6 @@
 #{extends 'home.html' /}
 #{set title:'添加问题' /}
 
-<script type="text/javascript">
-      	function CheckImageType()
-     {
-       var obj=document.getElementById('problem.image');
-       if(obj.value!='')
-       {
-		var stuff=obj.value.match(/^(.*)(/.)(.{1,8})$/)[3]; 
-		if(stuff!='png' && stuff!='PNG')
-		{
-			alert('图片文件类型不正确，请选择.png文件');
-			return false;
-        }
-       }
-        return true;
-     }
-	function CheckAudioType()
-     {
-       var obj=document.getElementById('problem.audio');
-       if(obj.value!='')
-       {
-		var stuff=obj.value.match(/^(.*)(/.)(.{1,8})$/)[3]; 
-		if(stuff!='mp3' && stuff!='MP3')
-		{
-			alert('音频文件类型不正确，请选择.mp3文件');
-			return false;
-        }
-       }
-        return true;
-     }
-</script>
-
 <!-- BEGIN container_12 -->
 <div class="container_12">
 	<div class="line">
@@ -63,7 +32,8 @@
                     <td style="padding: 15px;text-align:right;">选项个数（若为选择题必选）：</td>
                     <td style="padding: 15px;">
 						<select name="problem.choiceSize">
-							<option value="2" selected>2</option>
+							<option value="0" selected>-</option>
+							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
 							<option value="5">5</option>

@@ -114,6 +114,20 @@ public class Home extends Controller {
 	}
 
 	/**
+	 * 编辑调查问卷
+	 * 
+	 * @param qid
+	 */
+	public static void editQuestionnaire(long qid) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		if (questionnaire.cost != null) {
+			// 已经付费
+			viewQuestionnaire(qid);
+		} else
+			render(questionnaire);
+	}
+
+	/**
 	 * 查看调查问卷
 	 * 
 	 * @param qid
@@ -123,24 +137,50 @@ public class Home extends Controller {
 		render(questionnaire);
 	}
 
-	public static void addProblem(boolean state, long qid,Problem problem) {
+	/**
+	 * 添加问题
+	 * 
+	 * @param state
+	 * @param qid
+	 * @param problem
+	 */
+	public static void addProblem(boolean state, long qid, Problem problem) {
 		if (state) {
 			Questionnaire questionnaire = Questionnaire.findById(qid);
-			questionnaire.problems.add(problem);
-			questionnaire.save();
-			viewQuestionnaire(qid);
+			questionnaire.addProblem(problem);
+			editQuestionnaire(qid);
 		} else {
 			Questionnaire questionnaire = Questionnaire.findById(qid);
-			render(questionnaire);
+			if (questionnaire.cost != null) {
+				// 已经付费
+				viewQuestionnaire(qid);
+			} else
+				render(questionnaire);
 		}
 
 	}
 
 	public static void addAdvertisement(boolean state, long qid) {
 		if (state) {
-			viewQuestionnaire(qid);
+			editQuestionnaire(qid);
 		} else {
 			params.flash();
+			render();
+		}
+	}
+
+	/**
+	 * 支付
+	 */
+	public static void payBill(long qid) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		if (questionnaire.cost != null) {
+			// 已经付费
+			viewQuestionnaire(qid);
+		} else {
+			questionnaire.cost = 1.0d;
+			questionnaire.status = Q_STATUS_UNDERWAY;
+			questionnaire.save();
 			render();
 		}
 	}
@@ -151,5 +191,4 @@ public class Home extends Controller {
 	public static void profile() {
 		render();
 	}
-
 }

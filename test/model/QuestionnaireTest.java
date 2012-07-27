@@ -43,5 +43,6 @@ public class QuestionnaireTest extends UnitTest {
 		assertEquals("2013年手机软件满意度调查", questionnaire.name);
 		questionnaire.delete();
 		assertEquals(1, Questionnaire.count());
+		
 	}
 }
