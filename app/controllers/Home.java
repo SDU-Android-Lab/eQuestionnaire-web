@@ -139,6 +139,17 @@ public class Home extends Controller {
 	}
 
 	/**
+	 * 删除调查问卷
+	 * 
+	 * @param qid
+	 */
+	public static void deleteQuestionnaire(long qid) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		questionnaire.delete();
+		index(0);
+	}
+
+	/**
 	 * 添加问题
 	 * 
 	 * @param state
@@ -266,5 +277,12 @@ public class Home extends Controller {
 	public static void profile() {
 		Client client = Client.findById(Long.parseLong(session.get("cid")));
 		render(client);
+	}
+
+	/**
+	 * 收费模式
+	 */
+	public static void charge() {
+		render();
 	}
 }
