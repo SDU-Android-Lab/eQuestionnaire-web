@@ -1,0 +1,41 @@
+#{extends 'home.html' /}
+#{set title:'查看广告' /}
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_8">
+        	<h1 id="typh1">“${advertisement.questionnaire.name}” —— 查看广告</h1>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.editQuestionnaire()}?qid=${advertisement.questionnaire.qid}"><button  style="margin-bottom: 15px;margin-top: 25px;">返回广告列表</button></a>
+        </div>
+     </div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+            	<tbody>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">文字内容：</td>
+                    <td style="padding: 15px;">
+                    #{if advertisement.content}
+                         ${advertisement.content}
+                    #{/if}
+                   #{else}
+                    	无
+                    #{/else}
+                    </td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">图片：</td>
+                    <td style="padding: 15px;">
+                    #{if advertisement.image.get()}
+                       <img src="@{Mobile.getAdvertisementImage()}?aid=${advertisement.aid}"></img>
+                    #{/if}
+                    #{else}
+                    	无
+                    #{/else}
+                    </td>
+                    </tr>
+            	</tbody>            	
+            </table>
+</div><!-- END container_12 -->

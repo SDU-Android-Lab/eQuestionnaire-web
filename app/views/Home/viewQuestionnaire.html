@@ -31,6 +31,15 @@
 <div class="container_12">
      <div class="line">
  		<div class="grid_4">
+        	<h2>调查数据统计</h2>
+        </div>
+     </div>
+</div><!-- END container_12 -->
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+     <div class="line">
+ 		<div class="grid_4">
         	<h2>问题列表</h2>
         </div>
      </div>
@@ -51,7 +60,9 @@
 		                <tr>
 	                    <td>${problemNum}</td>
 	                    <td> ${problem.content.length() > 30 ? problem.content[0..30] + '…' : problem.content}</td>
-	                    <td>查看</td>
+	                    <td>
+	                    <a href="@{Home.viewProblem()}?pid=${problem.pid}">查看</a>&nbsp;&nbsp;
+	                    </td>
 	                    </tr>
 	                    %{problemNum++;}%
 	            	#{/list}
@@ -82,7 +93,17 @@
                     </tr>
                 </thead>
             	<tbody>
-            	
+            	%{int adNum = 1;}%
+            		#{list items:questionnaire.advertisements, as:'ad'}
+		                <tr>
+	                    <td>${adNum}</td>
+	                    <td> ${ad.content.length() > 30 ? ad.content[0..30] + '…' : ad.content}</td>
+	                    <td>
+	                    <a href="@{Home.viewAdvertisement()}?aid=${ad.aid}">查看</a>&nbsp;&nbsp;
+	                    </td>
+	                    </tr>
+	                    %{adNum++;}%
+	            	#{/list}
             	</tbody>
             	
             </table>

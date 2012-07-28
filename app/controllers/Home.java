@@ -161,6 +161,33 @@ public class Home extends Controller {
 	}
 
 	/**
+	 * 查看问题
+	 * 
+	 * @param pid
+	 */
+	public static void viewProblem(long pid) {
+		Problem problem = Problem.findById(pid);
+		render(problem);
+	}
+
+	/**
+	 * 删除问题
+	 * 
+	 * @param pid
+	 */
+	public static void deleteProblem(long qid, long pid) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		if (questionnaire.cost != null) {
+			// 已经付费
+			viewQuestionnaire(qid);
+		} else {
+			Problem problem = Problem.findById(pid);
+			problem.delete();
+			editQuestionnaire(qid);
+		}
+	}
+
+	/**
 	 * 添加广告
 	 * 
 	 * @param state
@@ -186,6 +213,34 @@ public class Home extends Controller {
 				viewQuestionnaire(qid);
 			} else
 				render(questionnaire);
+		}
+	}
+
+	/**
+	 * 查看广告
+	 * 
+	 * @param aid
+	 */
+	public static void viewAdvertisement(long aid) {
+		Advertisement advertisement = Advertisement.findById(aid);
+		render(advertisement);
+	}
+
+	/**
+	 * 删除广告
+	 * 
+	 * @param qid
+	 * @param aid
+	 */
+	public static void deleteAdvertisement(long qid, long aid) {
+		Questionnaire questionnaire = Questionnaire.findById(qid);
+		if (questionnaire.cost != null) {
+			// 已经付费
+			viewQuestionnaire(qid);
+		} else {
+			Advertisement advertisement = Advertisement.findById(aid);
+			advertisement.delete();
+			editQuestionnaire(qid);
 		}
 	}
 

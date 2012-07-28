@@ -1,0 +1,63 @@
+#{extends 'home.html' /}
+#{set title:'查看问题' /}
+
+<!-- BEGIN container_12 -->
+<div class="container_12">
+	<div class="line">
+ 		<div class="grid_8">
+        	<h1 id="typh1">“${problem.questionnaire.name}” —— 查看问题</h1>
+        </div>
+        <div class="grid_4">
+        	<a href="@{Home.editQuestionnaire()}?qid=${problem.questionnaire.qid}"><button  style="margin-bottom: 15px;margin-top: 25px;">返回问题列表</button></a>
+        </div>
+     </div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;border-collapse: collapse;">
+            	<tbody>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">题目内容：</td>
+                    <td style="padding: 15px;">${problem.content}</td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">问题类型：</td>
+                    <td style="padding: 15px;">
+                    	#{if problem.type==0}
+	                        	选择题
+	                    #{/if}
+	                    #{elseif problem.type==1}
+	                    		简述题
+	                    #{/elseif}
+					</td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">选项个数</td>
+                    <td style="padding: 15px;">
+						${problem.choiceSize}
+					</td>
+                    </tr>
+                    
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">图片：</td>
+                    <td style="padding: 15px;">
+                    #{if problem.image.get()}
+                       <img src="@{Mobile.getProblemImage()}?pid=${problem.pid}"></img>
+                    #{/if}
+                    #{else}
+                    	无
+                    #{/else}
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="padding: 15px;text-align:right;">音频：</td>
+                    <td style="padding: 15px;">
+                    #{if problem.audio.get()}
+                       <a href="@{Mobile.getProblemAudio()}?pid=${problem.pid}">文件</a>
+                    #{/if}
+                    #{else}
+                    	无
+                    #{/else}
+                    </td>
+                    </tr>
+            	</tbody>            	
+            </table>
+</div><!-- END container_12 -->

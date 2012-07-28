@@ -54,7 +54,10 @@
 		                <tr>
 	                    <td>${problemNum}</td>
 	                    <td> ${problem.content.length() > 30 ? problem.content[0..30] + '…' : problem.content}</td>
-	                    <td>查看</td>
+	                    <td>
+	                    <a href="@{Home.viewProblem()}?pid=${problem.pid}">查看</a>&nbsp;&nbsp;
+	                    <a href="@{Home.deleteProblem()}?qid=${questionnaire.qid}&pid=${problem.pid}">删除</a>&nbsp;&nbsp;
+	                    </td>
 	                    </tr>
 	                    %{problemNum++;}%
 	            	#{/list}
@@ -93,7 +96,10 @@
 		                <tr>
 	                    <td>${adNum}</td>
 	                    <td> ${ad.content.length() > 30 ? ad.content[0..30] + '…' : ad.content}</td>
-	                    <td>查看</td>
+	                    <td>
+	                    <a href="@{Home.viewAdvertisement()}?aid=${ad.aid}">查看</a>&nbsp;&nbsp;
+	                    <a href="@{Home.deleteAdvertisement()}?qid=${questionnaire.qid}&aid=${ad.aid}">删除</a>
+	                    </td>
 	                    </tr>
 	                    %{adNum++;}%
 	            	#{/list}
